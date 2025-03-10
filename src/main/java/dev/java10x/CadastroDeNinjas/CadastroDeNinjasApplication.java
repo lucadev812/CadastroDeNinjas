@@ -8,6 +8,5 @@ public class CadastroDeNinjasApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(CadastroDeNinjasApplication.class, args);
-		System.out.println("hello word");
 
 	}}
