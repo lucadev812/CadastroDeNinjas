@@ -23,9 +23,11 @@ public class NinjaModel {
 
     private String nome;
 
+    @Column(unique = true)
     private String email;
 
     private int idade;
+
     //@ManyToOne =  um ninja tem uma  unica missão
     @ManyToOne
     @JoinColumn(name = "missoes_id")
