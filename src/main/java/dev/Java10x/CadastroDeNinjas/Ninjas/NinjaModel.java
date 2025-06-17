@@ -1,4 +1,4 @@
-package dev.Java10x.CadastroDeNinjas.Ninjas.NinjaModel;
+package dev.Java10x.CadastroDeNinjas.Ninjas;
 
 import dev.Java10x.CadastroDeNinjas.Missões.MissoesModel;
 import jakarta.persistence.*;
@@ -16,14 +16,19 @@ import lombok.NoArgsConstructor;
 public class NinjaModel {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-
+    @Column(name = "id")
     private long id;
 
+    @Column(name = "nome")
     private String nome;
 
     @Column(unique = true)
     private String email;
 
+    @Column(name ="img_url")
+    private String imgUrl;
+
+    @Column(name = "idade")
     private int idade;
 
     //@ManyToOne =  um ninja tem uma  unica missão
