@@ -9,8 +9,9 @@ public class NinjasController {
     @RequestMapping
     public static class NinjaController {
 
-        @GetMapping("/boasvindas")
+        @GetMapping("/boasVindas")
         public String boasVindas() {
+
             return "essa é minha primeira rota";
         }
     }

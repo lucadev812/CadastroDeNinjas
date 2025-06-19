@@ -9,7 +9,7 @@ import lombok.NoArgsConstructor;
 // Entity transforma uma classe em uma entidade do banco de dados
 
 @Entity
-@Table(name = "tb_cadastro_de_ninjas")
+@Table(name = "Ninjas")
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
@@ -17,12 +17,12 @@ public class NinjaModel {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
-    private long id;
+    private Long id;
 
-    @Column(name = "nome")
+    @Column(nullable = false)
     private String nome;
 
-    @Column(unique = true)
+    @Column(unique = true,nullable = false)
     private String email;
 
     @Column(name ="img_url")
