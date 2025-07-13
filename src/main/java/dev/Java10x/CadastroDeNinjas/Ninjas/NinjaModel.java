@@ -9,7 +9,7 @@ import lombok.NoArgsConstructor;
 // Entity transforma uma classe em uma entidade do banco de dados
 
 @Entity
-@Table(name = "Ninjas")
+@Table(name = "tb_cadastro")
 @NoArgsConstructor
 @AllArgsConstructor
 @Data

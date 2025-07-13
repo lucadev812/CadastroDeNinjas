@@ -1,0 +1,2 @@
+ALTER TABLE missoes
+ADD COLUMN dificuldade VARCHAR(55)
