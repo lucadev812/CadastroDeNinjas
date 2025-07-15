@@ -16,4 +16,5 @@ public class MissoesService {
     public List<MissoesModel> listarMissoes(){
         return missoesRepository.findAll();
     }
+
 }

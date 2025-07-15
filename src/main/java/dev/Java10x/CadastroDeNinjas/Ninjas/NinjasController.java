@@ -29,8 +29,8 @@ public class NinjasController {
         return "Ninja criado";
     }
 
-    @GetMapping("/listarID")
-    public String mostrarTodosNinjasPorId() {
-        return "mostrar ninja por id";
+    @GetMapping("/listar/{id}")
+    public NinjaModel mostrarTodosNinjasPorId(@PathVariable Long id) {
+        return ninjaService.listarNinjasPorID(id);
     }
 }
