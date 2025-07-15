@@ -1,56 +1,36 @@
 package dev.Java10x.CadastroDeNinjas.Ninjas;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+@RestController
+@RequestMapping("/ninjas")
 public class NinjasController {
-    @RestController
-    @RequestMapping("/ninjas")
-    public static class NinjaController {
 
-        @GetMapping("/boasVindas")
-        public String boasVindas() {
+    private  NinjaService ninjaService;
 
-            return "essa é minha primeira rota";
-
-            }
-
-    // adicionar ninjas(create)
-    @PostMapping("/adicionar")
-    public String adicionarNinja(){
-        return "Ninja criado";}
-
-    // procurar ninja pelo id(create)
-
-    // MOSTRAR TODOS OS NINJAS(READ)
-         @GetMapping("/listar")
-        public String mostrarTodosNinjas(){
-            return "mostrar ninja ";
-
-         }
-
-
-    // MOSTRAR NINJA PRO ID(READ)
-    @GetMapping("/listarID")
-    public String mostrarTodosNinjasPorId(){
-        return "mostrar ninja por id";
-
-        }
-
-
-        //alterar dados do ninja(UPDATE)
-        @PutMapping("/alterarID")
-        public String alterarNinjaPorId(){
-            return "ninja aletrado por id";
-        }
-
-    //deletar ninja(DELETE)
-        @DeleteMapping("/deletarID")
-        public String deletarPorId(){
-            return "ninja deletado por id";
-        }
-
-
-
-        }
+    public NinjasController(NinjaService ninjaService) {
+        this.ninjaService = ninjaService;
     }
 
+    @GetMapping("/listar")
+    public List<NinjaModel> mostrarTodosNinjas() {
+        return ninjaService.listarNinjas();
+    }
+
+    @GetMapping("/boasVindas")
+    public String boasVindas() {
+        return "essa é minha primeira rota";
+    }
+
+    @PostMapping("/adicionar")
+    public String adicionarNinja() {
+        return "Ninja criado";
+    }
+
+    @GetMapping("/listarID")
+    public String mostrarTodosNinjasPorId() {
+        return "mostrar ninja por id";
+    }
+}
