@@ -5,7 +5,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("missoes")
+@RequestMapping("/missoes")
 public class MissoesController {
 
     private MissoesService missoesService;
@@ -16,8 +16,8 @@ public class MissoesController {
 
     // POST-mandar uma requisição para criar uma missao
 @PostMapping("/criar")
-    public String criarMissao(){
-    return "missao criada com sucesso";
+    public MissoesModel criarMissao(@RequestBody MissoesModel missoesModel){
+    return missoesService.criarMissao(missoesModel);
 }
 
 // PUT-manda uma requisição para alterar as missoes

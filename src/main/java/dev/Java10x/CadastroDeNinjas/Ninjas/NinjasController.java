@@ -3,6 +3,7 @@ package dev.Java10x.CadastroDeNinjas.Ninjas;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.awt.geom.QuadCurve2D;
 import java.util.List;
 @RestController
 @RequestMapping("/ninjas")
@@ -25,8 +26,8 @@ public class NinjasController {
     }
 
     @PostMapping("/adicionar")
-    public String adicionarNinja() {
-        return "Ninja criado";
+    public NinjaModel adicionarNinja(@RequestBody NinjaModel ninjaModel) {
+        return ninjaService.criarNinja(ninjaModel);
     }
 
     @GetMapping("/listar/{id}")
