@@ -34,4 +34,9 @@ public class NinjasController {
     public NinjaModel mostrarTodosNinjasPorId(@PathVariable Long id) {
         return ninjaService.listarNinjasPorID(id);
     }
+    // deletar ninja por id
+    @DeleteMapping("/deletar/{id}")
+    public void deletarNinjaId(@PathVariable long id){
+        ninjaService.deletarNinjaPorID(id);
+    }
 }
