@@ -19,7 +19,7 @@ public class NinjaMapper {
         ninjaModel.setRank(ninjasDTO.getRank());
         ninjaModel.setImgUrl(ninjasDTO.getImgUrl());
         ninjaModel.setFrases(ninjasDTO.getFrases());
-        ninjaModel.setMissoes(missoesMapper.toModel(ninjasDTO.getMissoesDTO())); // ✅ conversão correta
+        ninjaModel.setMissoes(missoesMapper.toModel(ninjasDTO.getMissoesDTO())); //
         return ninjaModel;
     }
 
@@ -33,7 +33,7 @@ public class NinjaMapper {
         ninjasDTO.setRank(ninjaModel.getRank());
         ninjasDTO.setImgUrl(ninjaModel.getImgUrl());
         ninjasDTO.setFrases(ninjaModel.getFrases());
-        ninjasDTO.setMissoesDTO(missoesMapper.toDTO(ninjaModel.getMissoes())); // ✅ conversão correta
+        ninjasDTO.setMissoesDTO(missoesMapper.toDTO(ninjaModel.getMissoes()));
         return ninjasDTO;
     }
 }
